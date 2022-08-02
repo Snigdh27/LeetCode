@@ -13,19 +13,18 @@ public:
         if(root==NULL || root==p || root==q){
             return root;
         }
-        TreeNode* left=lowestCommonAncestor(root->left,p,q);
-        TreeNode* right=lowestCommonAncestor(root->right,p,q);
         
+        TreeNode* leftSide=lowestCommonAncestor(root->left,p,q);
+        TreeNode* rightSide=lowestCommonAncestor(root->right,p,q);
         
-       
-        if(left!=NULL && right!=NULL){
-            return root;
+        if(leftSide==NULL){
+            return rightSide;
         }
-        if(left==NULL){
-            return right;
+        if(rightSide==NULL){
+            return leftSide;
         }
         else{
-            return left;
+            return root;
         }
     }
 };
