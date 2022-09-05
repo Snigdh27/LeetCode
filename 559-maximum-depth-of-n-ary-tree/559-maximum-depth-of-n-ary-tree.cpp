@@ -28,24 +28,24 @@ public:
         queue<Node*>q;
         q.push(root);
         
-        vector<vector<int>>ans;
-        
+        //vector<vector<int>>ans;
+        int count=0;
         while(!q.empty()){
             int n=q.size();
-            vector<int>v;
+            //vector<int>v;
             for(int i=0;i<n;i++){
                 Node* temp=q.front();
                 q.pop();
                 for(auto x:temp->children){
                     q.push(x);
                 }
-                v.push_back(temp->val);
+                //v.push_back(temp->val);
             }
-            ans.push_back(v);
+            count++;
         }
         
-        int depth=ans.size();
+       // int depth=ans.size();
         
-        return depth;
+        return count;
     }
 };
