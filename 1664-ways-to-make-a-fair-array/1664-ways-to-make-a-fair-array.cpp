@@ -3,7 +3,7 @@ public:
     int waysToMakeFair(vector<int>& nums) {
         int evenSum=0,oddSum=0;
         int n=nums.size();
-        for(int i=n-1;i>=0;i--){
+        for(int i=0;i<n;i++){
             if(i%2==0){
                 evenSum+=nums[i];
             }
